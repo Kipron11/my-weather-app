@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './CurrentWeather.module.scss'
 
 const CurrentWeather = ({data}) => {
-    console.log('CurrWeat')
     return (
         <section className={styles.CurrentWeatherComp}>
             <div className={styles.top}>

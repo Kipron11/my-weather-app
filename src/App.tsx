@@ -3,6 +3,7 @@ import './App.css';
 import Search from "./components/Search/Search";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import {WEATHER_API_KEY, WEATHER_API_URL} from "./Data/API/API";
+import Forecast from "./components/Forecast/Forecast";
 
 function App() {
     const [currentWeather, setCurrentWeather] = useState(null);
@@ -32,6 +33,7 @@ function App() {
     <section className="container">
       <Search onSearchChange={handleOnSearchChange} />
         {currentWeather &&  <CurrentWeather data={currentWeather} /> }
+        {currentForecast && <Forecast data={currentForecast} />}
     </section>
   );
 }
