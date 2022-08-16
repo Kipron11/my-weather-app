@@ -3,30 +3,31 @@ import styles from './Forecast.module.scss'
 import {
     Accordion,
     AccordionItem,
-    AccordionItemPanel,
+    AccordionItemButton,
     AccordionItemHeading,
-    AccordionItemButton
+    AccordionItemPanel
 } from "react-accessible-accordion";
 
 const Days = [
-    "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
 ];
 
 const Forecast = ({data}) => {
 
     const dayInAWeek = new Date().getDay();
-    const forecastDays = Days.slice(dayInAWeek,Days.length).concat(Days.slice(0,dayInAWeek))
+    const forecastDays = Days.slice(dayInAWeek, Days.length).concat(Days.slice(0, dayInAWeek))
 
     return (
         <section className={styles.ForecastComp}>
             <label className={styles.title}>Daily</label>
             <Accordion allowZeroExpanded>
-                {data.list.splice(0,7).map((item,index)=>(
+                {data.list.splice(0, 7).map((item, index) => (
                     <AccordionItem key={index}>
                         <AccordionItemHeading>
                             <AccordionItemButton>
                                 <div className={styles.dailyItem}>
-                                    <img alt="weather" className={styles.dailyIcon} src={`/icons/${item.weather[0].icon}.png`}/>
+                                    <img alt="weather" className={styles.dailyIcon}
+                                         src={`/icons/${item.weather[0].icon}.png`}/>
                                     <label className={styles.day}>
                                         {forecastDays[index]}
                                     </label>
