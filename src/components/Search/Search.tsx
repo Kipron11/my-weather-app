@@ -3,7 +3,6 @@ import {AsyncPaginate} from "react-select-async-paginate";
 import {geoAPIOptions, GEO_API_URL} from "../../Data/API/API";
 
 const Search = ({onSearchChange}) => {
-    console.log('Search')
     const [search,setSearch] = useState(null)
 
     const loadOption = (inputValue) => {
@@ -31,7 +30,7 @@ const Search = ({onSearchChange}) => {
     }
 
     return (
-        <div className="SearchComp">
+        <section className="SearchComp">
             <AsyncPaginate
                 debounceTimeout={600}
                 value={search}
@@ -40,7 +39,7 @@ const Search = ({onSearchChange}) => {
                 loadOptions={loadOption}
 
             ></AsyncPaginate>
-        </div>
+        </section>
     );
 };
 
